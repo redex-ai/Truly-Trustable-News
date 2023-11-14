@@ -7,6 +7,7 @@ const Category = require('./model/categoryschema');
 const mongoose = require('mongoose');
 const news_operations = require('./methods/news_operations');
 const category_Operations = require('./methods/category_Operations');
+const MetricMonitor = require('MetricMonitor'); // Import MetricMonitor
 
 require('dotenv').config();
 const bodyParser = require('body-parser');
@@ -28,6 +29,7 @@ async function main(){
   await mongoose.connect(mongoDB);
 }
 
+app.use(MetricMonitor.middleware()); // Use MetricMonitor middleware
 
 app.use(cors());
 //news operations routing requests and posts

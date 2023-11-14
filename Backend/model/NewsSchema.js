@@ -1,22 +1,24 @@
-const mongoose = require("mongoose");
-
-const Schema = mongoose.Schema;
-
-const NewsSchema = new Schema({
-  heading: { type: String, required: true },
-  subheading: {type: String, required: true},
-  author: { type: String, required: true },
-  article: { type: String, required: true },
-  date : { type: Date, required: true },
-  img: {
-    src: {type:String, required: true},
-    position: {type: String},
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  category: [{ type: Schema.ObjectId, ref: "Category" }],
-});
-
-
-
-
-// Export model
-module.exports = mongoose.model("NewsSchema", NewsSchema);
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "mongoose": "^7.5.3",
+    "MetricMonitor": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
